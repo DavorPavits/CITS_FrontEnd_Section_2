@@ -1,6 +1,5 @@
-
-import './App.css';
-import React, { useEffect, useState } from 'react';
+import "./App.css";
+import React, { useEffect, useState } from "react";
 
 const people = [
   "Siri",
@@ -9,7 +8,7 @@ const people = [
   "Facebook",
   "Twitter",
   "Linkedin",
-  "Sinkedin"
+  "Sinkedin",
 ];
 
 function App() {
@@ -17,30 +16,26 @@ function App() {
 
   const [searchResults, setSearchresults] = useState([]);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  useEffect(()=>{
-    const results = people.filter(person => 
+  useEffect(() => {
+    const results = people.filter((person) =>
       person.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setSearchresults(results);
   }, [searchTerm]);
   return (
     <div className="App">
-      <nav className='navbar navbar-light bg-ligh'>
-      <input
-      type='text'
-      placeholder='Search'
-      value={searchTerm}
-      onChange={handleChange}>
-      </input>
-      <ul>
-        {searchTerm && searchResults.map(item => (
-          <li>{item}</li>
-        ))}
-      </ul>
+      <nav className="navbar navbar-light bg-ligh">
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={handleChange}
+        ></input>
+        <ul>{searchTerm && searchResults.map((item) => <li>{item}</li>)}</ul>
       </nav>
     </div>
   );
