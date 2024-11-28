@@ -37,4 +37,16 @@
   }
 }
 
+.people {
+  background-color: orange;
+}
 
+.title {
+  background-color: greenyellow;
+}
+
+.profession {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
