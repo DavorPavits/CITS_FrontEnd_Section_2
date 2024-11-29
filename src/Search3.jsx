@@ -45,32 +45,36 @@ function Search3() {
   return (
     <div className="App">
       <input type="text" placeholder="Search" value={searchTerm} onChange={handleChange} />
-      <div className="people">
+      <div id="list">
+        {/* <div className="people"> */}
         {searchTerm &&
           people
             .filter((n) => n.name.includes(searchTerm))
-            .slice(0, 5)
+            .slice(0, 3)
             .map((i, k) => (
-              <div key={k} onClick={() => handleResultClick(i.name)}>
+              <div key={k} onClick={() => handleResultClick(i.name)} className="listItem">
                 <h4>{i.name}</h4>
                 <p>{i.birthYear}</p>
                 <div className="profession">{i.professions && i.professions.map((t, i) => <div key={i}>{t}</div>)}</div>
               </div>
             ))}
+        {/* </div> */}
       </div>
 
-      <div className="title">
+      {/* <div className="title"> */}
+      <div id="list">
         {searchTerm &&
           title
             .filter((t) => t.primaryTitle.toLowerCase().includes(searchTerm.toLowerCase()))
-            .slice(0, 5)
+            .slice(0, 3)
             .map((t, i) => (
-              <p key={i} onClick={() => handleTitleClick(t.primaryTitle)}>
-                {t.primaryTitle}
+              <p key={i} onClick={() => handleTitleClick(t.primaryTitle)} className="listItem">
+                {t.primaryTitle || t.primary_title}
               </p>
             ))}
       </div>
     </div>
+    // </div>
   );
 }
 

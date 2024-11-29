@@ -50,3 +50,34 @@
   justify-content: center;
   justify-content: space-evenly;
 }
+
+#list {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  display: block;
+  justify-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 5px 20px;
+  color: black;
+  width: 450px;
+}
+.listItem:hover {
+  background-color: lightgrey;
+}
+
+.language {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.genres {
+  display: flex;
+  justify-content: space-evenly;
+}
